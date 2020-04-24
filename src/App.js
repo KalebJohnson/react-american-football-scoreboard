@@ -1,28 +1,52 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+const charColor = {
+  color: 'blue'
+}
+
+const timerStyle = {
+  margin: '1rem',
+};
+
+const image = './football-background.jpg';
+
+const boardStyle = {
+  backgroundColor: 'red',
+  boarderRadius: '1rem',
+  border: '5px solid black'
+}
+
+const headerColor = {
+  color: 'black'
+}
+
+
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [totalHome, setTotalHome] = useState(0);
   const [totalAway, setTotalAway] = useState(0);
-  const [totalClock, setTotalClock] = useState(0);
+
+ // const [totalClock, setTotalClock] = useState(0);
+
+
   return (
     <div className="container">
-      <section className="scoreboard">
+      <section className="scoreboard" style={boardStyle}>
         <div className="topRow">
           <div className="home">
-            <h2 className="home__name">Me</h2>
+            <h2 className="home__name"style={headerColor}>Kaleb</h2>
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
-            <div className="home__score">{totalHome}</div>
+            <div className="home__score" style={charColor}>{totalHome}</div>
           </div>
-
+  <div className="timer" style={timerStyle}>00:33</div>
           <div className="away">
-            <h2 className="away__name">React</h2>
-            <div className="away__score">{totalAway}</div>
+            <h2 className="away__name"style={headerColor}>React</h2>
+            <div className="away__score"style={charColor}>{totalAway}</div>
           </div>
         </div>
         <BottomRow />
@@ -39,7 +63,7 @@ function App() {
           </button>
           <button className="homeButtons__fieldGoal"
             onClick={() => {
-            setTotalHome(totalHome + 2);
+            setTotalHome(totalHome + 3);
             }}
             >
             Home Field Goal
@@ -55,12 +79,12 @@ function App() {
                     </button>
           <button className="awayButtons__fieldGoal"
                     onClick={() => {
-                      setTotalAway(totalAway + 2);
+                      setTotalAway(totalAway + 3);
                     }}
                     >
                     Away Field Goal
                     </button>
-                    <button
+                    <button className="awayButtons__fieldGoal"
                     onClick={() => {
                       setTotalAway(totalAway - totalAway);
                       setTotalHome(totalHome - totalHome);
@@ -72,7 +96,13 @@ function App() {
       </section>
     </div>
   );
+
+  
 }
+
+
+
+
 
 
 

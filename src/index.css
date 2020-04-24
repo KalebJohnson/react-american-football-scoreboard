@@ -12,6 +12,10 @@
 html {
   font-size: 62.5%;
 }
+.topRow {
+  display: flex;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -32,7 +36,7 @@ button {
   padding: 1rem 2rem;
   margin: 0;
   text-decoration: none;
-  background: #414141;
+  background: hsl(0, 0%, 15%);
   color: #ffffff;
   font-family: inherit;
   font-size: 1.6rem;
@@ -45,7 +49,7 @@ button {
 
 button:hover,
 button:focus {
-  background: #a2272d;
+  background: red;
 }
 
 button:focus {
